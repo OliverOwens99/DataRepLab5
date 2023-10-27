@@ -22,9 +22,15 @@ app.get('/api/books', (req, res) => {
     res.json(data);
     
 })
+//route with index html
 app.get ('/test', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 
+});
+
+//route with form name
+app.get('/name', (req, res) => {
+    res.send('Hello '+ req.query.fname + ' ' + req.query.lname);
 });
 
 app.listen(port, () => {
